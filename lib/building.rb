@@ -14,9 +14,10 @@ class Building
     end
 
     def renters
-        @units.select do |unit|
+        renter_array = @units.map do |unit|
             unit.renter
         end
+        renter_array.compact
     end
 
 end
