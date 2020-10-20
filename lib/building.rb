@@ -20,4 +20,12 @@ class Building
         renter_array.compact
     end
 
+    def average_rent
+        total_rent = 0
+        @units.each do |unit|
+            total_rent += unit.monthly_rent
+        end
+        total_rent / @units.count.to_f
+    end
+
 end

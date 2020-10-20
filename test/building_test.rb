@@ -57,13 +57,13 @@ class BuildingTest < Minitest::Test
         assert_equal [@renter1, @renter2], @building.renters
     end
 
-    # # def test_it_can_calculate_avg_rent
-    # #     @building.add_unit(@unit1)
-    #     @building.add_unit(@unit2)
-    #     @unit1.add_renter(@renter1)
-    #     @unit2.add_renter(@renter2)
+    def test_it_can_calculate_avg_rent
+        @building.add_unit(@unit1)
+        @building.add_unit(@unit2)
+        @unit1.add_renter(@renter1)
+        @unit2.add_renter(@renter2)
 
-    #     assert_equal 1099.5, @building.average_rent
-    # end
+        assert_equal 1099.5, @building.average_rent
+    end
 
 end
