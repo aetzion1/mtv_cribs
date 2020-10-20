@@ -15,5 +15,7 @@ class RenterTest < Minitest::Test
     end
 
     def test_it_has_attributes
-        assert_equal "Jessie", renter1.name
+        assert_equal "Jessie", @renter1.name
     end
+
+end

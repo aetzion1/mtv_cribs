@@ -1,7 +1,7 @@
 require 'Minitest/autorun'
 require 'Minitest/pride'
 require './lib/renter'
-require '.lib/apartment'
+require './lib/apartment'
 require 'pry'
 
 class ApartmentTest < Minitest::Test
@@ -23,15 +23,17 @@ class ApartmentTest < Minitest::Test
     end
 
     def test_it_has_attributes
-        assert_equal "A1", renter1.number
-        assert_equal 1200, renter1.monthly_rent
-        assert_equal 1, renter1.bathrooms
-        assert_equal 1, renter1.bedrooms
-        assert_equal nil, renter1.renter
+        assert_equal "A1", @unit1.number
+        assert_equal 1200, @unit1.monthly_rent
+        assert_equal 1, @unit1.bathrooms
+        assert_equal 1, @unit1.bedrooms
+        assert_equal nil, @unit1.renter
     end
 
     def test_it_can_add_renter
         @unit1.add_renter(@renter1)
 
-        assert_equal @renter1, unit1.renter
+        assert_equal @renter1, @unit1.renter
     end
+
+end
