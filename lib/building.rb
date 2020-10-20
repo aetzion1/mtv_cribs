@@ -3,19 +3,20 @@ require './lib/apartment'
 
 class Building
     
-    attr_reader :units, :renters
+    attr_accessor :units
 
-    def initialize (units, renters)
-        @units = []
-        @renters = []
+    def initialize (units = [])
+        @units = units
     end
 
     def add_unit(unit)
         @units << unit
     end
 
-    def add_renter(renter)
-        @renters << renter
+    def renters
+        @units.select do |unit|
+            unit.renter
+        end
     end
 
 end

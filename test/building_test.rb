@@ -33,36 +33,38 @@ class BuildingTest < Minitest::Test
     end
 
     def test_it_has_attributes
-        assert_equal [], building.units
-        assert_equal [], building.renters
+        assert_equal [], @building.units
+        assert_equal [], @building.renters
     end
 
     def test_it_can_add_units
         @building.add_unit(@unit1)
         @building.add_unit(@unit2)
-        assert_equal [@unit1, @unit2], building.units
-        assert_equal [], building.renters
-    end
-
-    def test_it_can_add_renters
-        @building.add_unit(@unit1)
-        @building.add_unit(@unit2)
-        @unit1.add_renter(@renter1)
         
-        assert_equal [@renter1], building.renters
-
-        @unit2.add_renter(@renter2)
-
-        assert_equal [@renter1, @renter2], building.renters
+        assert_equal [@unit1, @unit2], @building.units
+        binding.pry
+        assert_equal [], @building.renters
     end
 
-    def test_it_can_calculate_avg_rent
-        @building.add_unit(@unit1)
-        @building.add_unit(@unit2)
-        @unit1.add_renter(@renter1)
-        @unit2.add_renter(@renter2)
+    # def test_it_can_add_renters
+    #     @building.add_unit(@unit1)
+    #     @building.add_unit(@unit2)
+    #     @unit1.add_renter(@renter1)
+    #     binding.pry
+    #     assert_equal [@renter1], @building.renters
 
-        assert_equal 1099.5, @building.average_rent
-    end
+    #     # @unit2.add_renter(@renter2)
+
+    #     # assert_equal [@renter1, @renter2], @building.renters
+    # end
+
+    # def test_it_can_calculate_avg_rent
+    #     @building.add_unit(@unit1)
+    #     @building.add_unit(@unit2)
+    #     @unit1.add_renter(@renter1)
+    #     @unit2.add_renter(@renter2)
+
+    #     assert_equal 1099.5, @building.average_rent
+    # end
 
 end
